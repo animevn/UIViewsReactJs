@@ -10,9 +10,8 @@ function InputRadio(props) {
     const interval = setInterval(()=> {
       setTime(new Date().toLocaleTimeString("en-US", {timeZone: value}))
     }, 1000);
-    return ()=>{
-      clearInterval(interval)
-    };
+    return ()=>clearInterval(interval)
+
     // eslint-disable-next-line
   },[value]);
 

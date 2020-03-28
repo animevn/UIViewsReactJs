@@ -5,7 +5,7 @@ import InputText from "./InputText";
 import InputRange from "./InputRange";
 import InputWeek from "./InputWeek";
 import InputCheck from "./input-check/InputCheck";
-import InputRadio from "./input-radio/InputRadio";
+import InputRadio from "./InputRadio";
 
 function Home() {
 
