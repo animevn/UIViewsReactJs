@@ -35,7 +35,7 @@ function InputRadio(props) {
   return (
     <div className="container border border-success rounded py-1 mt-3
                     d-flex flex-row justify-content-around align-items-center">
-      <div className='align-items-start'>
+      <div className='w-50 align-items-start'>
         {radio("Saigon", c.option1)}
         {radio("Berlin", c.option2)}
         {radio("New York", c.option3)}
