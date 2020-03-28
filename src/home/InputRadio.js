@@ -11,9 +11,8 @@ function InputRadio(props) {
       setTime(new Date().toLocaleTimeString("en-US", {timeZone: value}))
     }, 1000);
     return ()=>clearInterval(interval)
-
     // eslint-disable-next-line
-  },[value]);
+  }, [value]);
 
   function handleChange(event) {
     const eventValue = event.target.value;

@@ -2,7 +2,7 @@ import React, {useState} from "react";
 
 function InputWeek(props) {
 
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState();
 
   function handleChange(event) {
     event.preventDefault();
