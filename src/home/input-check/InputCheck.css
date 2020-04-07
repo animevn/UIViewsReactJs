@@ -14,3 +14,7 @@
 .filter.transparent{
     filter: hue-rotate(270deg) opacity(20%);
 }
+
+.scale-half{
+    transform: scale(0.5);
+}

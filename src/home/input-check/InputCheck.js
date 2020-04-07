@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import Box from "@material-ui/core/Box";
 import "./InputCheck.css"
 
 function InputCheck(props) {
@@ -37,20 +38,21 @@ function InputCheck(props) {
   };
 
   return (
-    <div className="container border border-success rounded py-1 mt-3
-                    d-flex flex-row justify-content-around align-items-center">
-      <div className="w-50">
+    <Box display="flex" flexDirection="row" justifyContent="center" p={2}
+         border={1} borderColor="orange" borderRadius={5}>
+      <Box width={0.6} display="flex" flexDirection="column" justifyContent="center" p={2}>
         {checkBox(c.transparent, value.transparent)}
         {checkBox(c.filter, value.filter)}
         {checkBox(c.resize, value.resize)}
-      </div>
+      </Box>
 
-      <div className="w-50 align-items-end d-flex justify-content-center">
+      <Box width={0.4} display="flex" flexDirection="row"
+           justifyContent="center" alignItems="center">
         <img className={"profile_image " + style.transparent + " "
                         + style.filter + " " + style.resize}
              src="images/profile.png" alt="img"/>
-      </div>
-    </div>
+      </Box>
+    </Box>
   )
 }
 

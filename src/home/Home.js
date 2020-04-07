@@ -2,6 +2,8 @@ import React, {useState} from "react";
 import {ThemeProvider} from "@material-ui/core";
 import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
 import Typography from "@material-ui/core/Typography";
+import Grid from "@material-ui/core/Grid";
+import Box from "@material-ui/core/Box";
 
 import InputDate from "./InputDate";
 import InputText from "./InputText";
@@ -10,9 +12,11 @@ import InputWeek from "./InputWeek";
 import InputCheck from "./input-check/InputCheck";
 import InputRadio from "./InputRadio";
 
+
 function Home() {
 
   const [value, setValue] = useState("");
+  const width = {xs:10, sm:8, md:6, lg:3.5, xl:3};
 
   const title = (titleText)=>{
     const theme = createMuiTheme();
@@ -29,11 +33,15 @@ function Home() {
       },
     };
 
+    const paddingTop = {xs:2, sm:3, md:3.5, lg:4, xl:4};
+
     return (
       <ThemeProvider theme={theme}>
-        <Typography variant="h6">
-          {titleText}
-        </Typography>
+        <Box my={{...paddingTop}}>
+          <Typography variant="h6" align="center">
+            {titleText}
+          </Typography>
+        </Box>
       </ThemeProvider>
     )
   };
@@ -43,8 +51,8 @@ function Home() {
   }
 
   return (
-    <div className="container">
-      <div className="container col-xl-5 col-lg-6 col-md-8 col-sm-10 col-10">
+    <Grid container direction="column" justify="center" alignItems="center">
+      <Grid {...width}>
         {title(`Input Type: ${value}`)}
         <InputCheck sendValue={handleValueSend}/>
         <InputRadio sendValue={handleValueSend}/>
@@ -52,9 +60,8 @@ function Home() {
         <InputText sendValue={handleValueSend}/>
         <InputDate sendValue={handleValueSend}/>
         <InputWeek sendValue={handleValueSend}/>
-
-      </div>
-    </div>
+      </Grid>
+    </Grid>
   )
 }
 
