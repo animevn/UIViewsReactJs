@@ -1,4 +1,8 @@
 import React, {useEffect, useState} from "react";
+import Box from "@material-ui/core/Box";
+import RadioGroup from "@material-ui/core/RadioGroup";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Radio from "@material-ui/core/Radio";
 
 function InputRadio(props) {
 
@@ -22,26 +26,27 @@ function InputRadio(props) {
 
   const radio = (rName, rValue)=>{
     return (
-      <div className="custom-control custom-radio">
-        <input type="radio" className="custom-control-input" id={rValue} value={rValue}
-               checked={value === rValue} onChange={handleChange}/>
-        <label className="custom-control-label" htmlFor={rValue}>{rName}</label>
-      </div>
+      <RadioGroup>
+        <FormControlLabel control={
+          <Radio id={rValue} value={rValue} checked={value === rValue} onChange={handleChange}/>
+        } label={rName} />
+      </RadioGroup>
     )
   };
 
   return (
-    <div className="container border border-success rounded py-1 mt-3
-                    d-flex flex-row justify-content-around align-items-center">
-      <div className='w-50 align-items-start'>
+    <Box display="flex" flexDirection="row" justifyContent="center" p={1}
+         border={1} borderColor="orange" borderRadius={5} mt={2}>
+      <Box width={0.6} p={1}>
         {radio("Saigon", c.option1)}
         {radio("Berlin", c.option2)}
         {radio("New York", c.option3)}
-      </div>
-      <div className="w-50 align-items-end d-flex justify-content-center">
+      </Box>
+      <Box width={0.4} display="flex" flexDirection="column"
+           justifyContent="center" alignItems="center">
         {time}
-      </div>
-    </div>
+      </Box>
+    </Box>
   )
 }
 

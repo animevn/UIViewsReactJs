@@ -16,7 +16,7 @@ import InputRadio from "./InputRadio";
 function Home() {
 
   const [value, setValue] = useState("");
-  const width = {xs:10, sm:8, md:6, lg:3, xl:3};
+  const width = {xs:10, sm:8, md:6, lg:4, xl:4};
 
   const title = (titleText)=>{
     const theme = createMuiTheme();
