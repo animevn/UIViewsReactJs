@@ -7,7 +7,7 @@ import Box from "@material-ui/core/Box";
 
 import InputDate from "./InputDate";
 import InputText from "./InputText";
-import InputRange from "./InputRange";
+import InputSlider from "./InputSlider";
 import InputWeek from "./InputWeek";
 import InputCheck from "./input-check/InputCheck";
 import InputRadio from "./InputRadio";
@@ -56,7 +56,7 @@ function Home() {
         {title(`Input Type: ${value}`)}
         <InputCheck sendValue={handleValueSend}/>
         <InputRadio sendValue={handleValueSend}/>
-        <InputRange sendValue={handleValueSend}/>
+        <InputSlider sendValue={handleValueSend}/>
         <InputText sendValue={handleValueSend}/>
         <InputDate sendValue={handleValueSend}/>
         <InputWeek sendValue={handleValueSend}/>
