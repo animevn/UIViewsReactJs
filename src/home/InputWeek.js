@@ -1,4 +1,5 @@
 import React, {useState} from "react";
+import Box from "@material-ui/core/Box";
 
 function InputWeek(props) {
 
@@ -12,8 +13,14 @@ function InputWeek(props) {
   }
 
   return (
-    <input className="form-control mb-3 text-success" placeholder="Enter some text"
-           type="week" value={value} onChange={handleChange}/>
+    <Box display="flex" flexDirection="row" justifyContent="center" p={3}
+         border={1} borderColor="orange" borderRadius={5} mt={2}>
+
+      <input className="form-control mb-3 text-success" placeholder="Enter some text"
+             type="week" value={value} onChange={handleChange}/>
+
+    </Box>
+
   )
 }
 
