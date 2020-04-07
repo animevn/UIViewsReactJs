@@ -1,5 +1,8 @@
 import React, {useState} from "react";
-import "./Home.css"
+import {ThemeProvider} from "@material-ui/core";
+import createMuiTheme from "@material-ui/core/styles/createMuiTheme";
+import Typography from "@material-ui/core/Typography";
+
 import InputDate from "./InputDate";
 import InputText from "./InputText";
 import InputRange from "./InputRange";
@@ -12,8 +15,26 @@ function Home() {
   const [value, setValue] = useState("");
 
   const title = (titleText)=>{
+    const theme = createMuiTheme();
+    theme.typography.h6 = {
+      fontSize: '1rem',
+      '@media (min-width:600px)': {
+        fontSize: '1.5rem',
+      },
+      '@media (min-width:960px)': {
+        fontSize: '2rem',
+      },
+      [theme.breakpoints.up("lg")]: {
+        fontSize: '2.5rem',
+      },
+    };
+
     return (
-      <p className="my-text text-center text-success font-weight-bold">{titleText}</p>
+      <ThemeProvider theme={theme}>
+        <Typography variant="h6">
+          {titleText}
+        </Typography>
+      </ThemeProvider>
     )
   };
 

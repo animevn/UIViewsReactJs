@@ -11,7 +11,7 @@ function Header() {
   return (
     <Box bgcolor="primary.main" py={{...padding}} >
       <Box fontWeight="fontWeightBold" mx={{...margin}}>
-        <Typography variant="h3">react-start</Typography>
+        <Typography variant="h3">UI Views</Typography>
       </Box>
     </Box>
 
