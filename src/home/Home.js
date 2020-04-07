@@ -16,7 +16,7 @@ import InputRadio from "./InputRadio";
 function Home() {
 
   const [value, setValue] = useState("");
-  const width = {xs:10, sm:8, md:6, lg:3.5, xl:3};
+  const width = {xs:10, sm:8, md:6, lg:3, xl:3};
 
   const title = (titleText)=>{
     const theme = createMuiTheme();
@@ -33,7 +33,7 @@ function Home() {
       },
     };
 
-    const paddingTop = {xs:2, sm:3, md:3.5, lg:4, xl:4};
+    const paddingTop = {xs:1.5, sm:2, md:2.5, lg:3, xl:3};
 
     return (
       <ThemeProvider theme={theme}>
@@ -52,7 +52,7 @@ function Home() {
 
   return (
     <Grid container direction="column" justify="center" alignItems="center">
-      <Grid {...width}>
+      <Grid item {...width}>
         {title(`Input Type: ${value}`)}
         <InputCheck sendValue={handleValueSend}/>
         <InputRadio sendValue={handleValueSend}/>

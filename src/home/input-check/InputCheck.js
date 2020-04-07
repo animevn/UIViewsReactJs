@@ -1,5 +1,8 @@
 import React, {useState} from "react";
 import Box from "@material-ui/core/Box";
+import FormGroup from "@material-ui/core/FormGroup";
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Checkbox from "@material-ui/core/Checkbox";
 import "./InputCheck.css"
 
 function InputCheck(props) {
@@ -29,18 +32,20 @@ function InputCheck(props) {
 
   const checkBox = (cbName, cbValue)=>{
     return (
-      <div className="form-check">
-        <input className="form-check-input" type="checkbox" id={cbName} value={cbName}
-               onChange={handleChange} checked={cbValue}/>
-        <label className="form-check-label ml-1" htmlFor={cbName}>{cbName}</label>
-      </div>
+      <FormGroup>
+        <FormControlLabel control={
+          <Checkbox id={cbName} value={cbName} onChange={handleChange} checked={cbValue}/>
+          }
+          label={cbName}
+        />
+      </FormGroup>
     )
   };
 
   return (
-    <Box display="flex" flexDirection="row" justifyContent="center" p={2}
+    <Box display="flex" flexDirection="row" justifyContent="center" p={1}
          border={1} borderColor="orange" borderRadius={5}>
-      <Box width={0.6} display="flex" flexDirection="column" justifyContent="center" p={2}>
+      <Box width={0.6} display="flex" flexDirection="column" justifyContent="center" p={1}>
         {checkBox(c.transparent, value.transparent)}
         {checkBox(c.filter, value.filter)}
         {checkBox(c.resize, value.resize)}
