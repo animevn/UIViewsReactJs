@@ -6,7 +6,6 @@ import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
 
 import InputDate from "./InputDate";
-import InputText from "./InputText";
 import InputSlider from "./InputSlider";
 import InputWeek from "./InputWeek";
 import InputCheck from "./input-check/InputCheck";
@@ -57,7 +56,6 @@ function Home() {
         <InputCheck sendValue={handleValueSend}/>
         <InputRadio sendValue={handleValueSend}/>
         <InputSlider sendValue={handleValueSend}/>
-        <InputText sendValue={handleValueSend}/>
         <InputDate sendValue={handleValueSend}/>
         <InputWeek sendValue={handleValueSend}/>
       </Grid>
